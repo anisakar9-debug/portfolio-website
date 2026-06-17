@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anisa Kumari — MBA · Founder · Strategist</title>
+  <title>Kumari Anisa · Strategist · Founder · Consultant</title>
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400,300&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
@@ -27,687 +27,632 @@
       --blur-sm:  blur(26px) saturate(160%);
       --display:  'Cabinet Grotesk', system-ui, sans-serif;
       --body:     'Inter', system-ui, sans-serif;
-      --r:  22px;
-      --rs: 14px;
+      --r: 22px;
     }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--body);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      background: #060410;
-    }
+    body { font-family: var(--body); color: var(--text); min-height: 100vh; overflow-x: hidden; background: #060410; }
 
-    /* ── Canvas connectivity background ── */
-    #bgCanvas {
-      position: fixed; inset: 0; z-index: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-    }
-
-    /* ── Gradient orbs behind canvas ── */
-    .orbs {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-    }
-    .orb {
-      position: absolute; border-radius: 50%; filter: blur(100px);
-      animation: orb-drift 22s ease-in-out infinite alternate;
-    }
+    /* Canvas + orbs */
+    #bgCanvas { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+    .orbs { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+    .orb { position: absolute; border-radius: 50%; filter: blur(100px); animation: odrift 22s ease-in-out infinite alternate; }
     .o1 { width: 650px; height: 650px; background: radial-gradient(circle, rgba(147,51,234,0.32) 0%, transparent 70%); top: -180px; left: -140px; animation-duration: 24s; }
     .o2 { width: 520px; height: 520px; background: radial-gradient(circle, rgba(0,255,200,0.22) 0%, transparent 70%); top: 5%; right: -100px; animation-duration: 18s; animation-delay: -7s; }
     .o3 { width: 420px; height: 420px; background: radial-gradient(circle, rgba(79,172,254,0.18) 0%, transparent 70%); bottom: 25%; left: 5%; animation-duration: 20s; animation-delay: -12s; }
     .o4 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(176,110,243,0.2) 0%, transparent 70%); bottom: 8%; right: 10%; animation-duration: 26s; animation-delay: -5s; }
     .o5 { width: 280px; height: 280px; background: radial-gradient(circle, rgba(0,255,200,0.15) 0%, transparent 70%); top: 50%; left: 45%; animation-duration: 30s; animation-delay: -15s; }
-    @keyframes orb-drift { from { transform: translate(0,0) scale(1); } to { transform: translate(45px,35px) scale(1.15); } }
+    @keyframes odrift { from { transform: translate(0,0) scale(1); } to { transform: translate(45px,35px) scale(1.15); } }
 
-    /* ── Content layers ── */
     nav, .hero, .section, footer { position: relative; z-index: 2; }
 
-    /* ════════════════════
-       NAV
-    ════════════════════ */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
-      height: 68px;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 60px;
-      background: rgba(6,4,16,0.28);
-      backdrop-filter: var(--blur-sm);
-      -webkit-backdrop-filter: var(--blur-sm);
-      border-bottom: 1px solid var(--gbrd-lo);
-      transition: background 0.4s;
-    }
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 300; height: 68px; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; background: rgba(6,4,16,0.28); backdrop-filter: var(--blur-sm); -webkit-backdrop-filter: var(--blur-sm); border-bottom: 1px solid var(--gbrd-lo); transition: background 0.4s; }
     nav.scrolled { background: rgba(6,4,16,0.72); }
-
-    .nav-logo {
-      font-family: var(--display); font-size: 17px; font-weight: 800;
-      letter-spacing: -0.03em; color: var(--white); text-decoration: none;
-    }
+    .nav-logo { font-family: var(--display); font-size: 17px; font-weight: 800; letter-spacing: -0.03em; color: var(--white); text-decoration: none; }
     .nav-logo em { font-style: normal; color: var(--teal); }
-
     .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
-    .nav-links a {
-      font-size: 12px; font-weight: 500; letter-spacing: 0.06em;
-      color: var(--muted); text-decoration: none;
-      padding: 7px 16px; border-radius: 100px;
-      transition: color 0.2s, background 0.2s;
-    }
+    .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--muted); text-decoration: none; padding: 7px 16px; border-radius: 100px; transition: color 0.2s, background 0.2s; }
     .nav-links a:hover { color: var(--white); background: var(--glass); }
-    .nav-links .ncta {
-      background: linear-gradient(135deg, var(--teal), var(--blue));
-      color: #040210 !important; font-weight: 700 !important;
-    }
+    .nav-links .ncta { background: linear-gradient(135deg, var(--teal), var(--blue)); color: #040210 !important; font-weight: 700 !important; }
     .nav-links .ncta:hover { opacity: 0.9; }
 
-    /* ════════════════════
-       HERO
-    ════════════════════ */
-    .hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 410px;
-      gap: 44px;
-      align-items: center;
-      padding: 120px 60px 80px;
-    }
+    /* HERO */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 410px; gap: 44px; align-items: center; padding: 120px 60px 80px; }
 
-    .hero-left {}
+    .badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 20px; margin-bottom: 38px; background: rgba(0,255,200,0.07); border: 1px solid var(--teal-brd); border-radius: 100px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); }
+    .bdot { width: 7px; height: 7px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 10px var(--teal); animation: bpulse 2.2s ease-in-out infinite; }
+    @keyframes bpulse { 0%,100% { opacity:1; box-shadow:0 0 10px var(--teal); transform:scale(1); } 50% { opacity:0.4; box-shadow:0 0 3px var(--teal); transform:scale(0.65); } }
 
-    .badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 8px 20px; margin-bottom: 38px;
-      background: rgba(0,255,200,0.07);
-      border: 1px solid var(--teal-brd);
-      border-radius: 100px;
-      font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--teal);
-    }
-    .bdot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--teal); box-shadow: 0 0 10px var(--teal);
-      animation: bpulse 2.2s ease-in-out infinite;
-    }
-    @keyframes bpulse {
-      0%,100% { opacity:1; box-shadow: 0 0 10px var(--teal); transform:scale(1); }
-      50%      { opacity:0.4; box-shadow: 0 0 3px var(--teal); transform:scale(0.65); }
-    }
-
-    .hero-name {
-      font-family: var(--display);
-      font-size: clamp(54px,7.5vw,102px);
-      font-weight: 800; line-height: 0.9;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-    .hero-name .grd {
-      background: linear-gradient(130deg, var(--teal) 0%, var(--blue) 50%, var(--purple) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-sub {
-      font-family: var(--display);
-      font-size: clamp(16px,2.2vw,24px);
-      font-weight: 400; color: var(--lo);
-      margin-bottom: 26px; letter-spacing: -0.01em;
-    }
-
-    .hero-bio {
-      font-size: 15.5px; font-weight: 300;
-      color: var(--muted); line-height: 1.85;
-      max-width: 500px; margin-bottom: 48px;
-    }
+    .hero-name { font-family: var(--display); font-size: clamp(52px,7.2vw,98px); font-weight: 800; line-height: 0.9; letter-spacing: -0.03em; color: var(--white); margin-bottom: 14px; }
+    .hero-name .grd { background: linear-gradient(130deg, var(--teal) 0%, var(--blue) 50%, var(--purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { font-family: var(--display); font-size: clamp(15px,2vw,22px); font-weight: 400; color: var(--lo); margin-bottom: 24px; letter-spacing: -0.01em; }
+    .hero-bio { font-size: 15.5px; font-weight: 300; color: var(--muted); line-height: 1.85; max-width: 520px; margin-bottom: 48px; }
     .hero-bio strong { color: var(--white); font-weight: 500; }
 
+    /* Industry pill strip */
+    .industry-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; }
+    .ipill { font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 100px; border: 1px solid var(--gbrd-lo); background: rgba(255,255,255,0.04); color: var(--muted); letter-spacing: 0.04em; }
+
     .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 13px 28px; border-radius: 12px;
-      font-size: 14px; font-weight: 600;
-      text-decoration: none; letter-spacing: 0.02em;
-      transition: all 0.24s;
-    }
-    .btn-p {
-      background: linear-gradient(135deg, var(--teal) 0%, var(--blue) 100%);
-      color: #040210;
-    }
+    .btn { display: inline-flex; align-items: center; gap: 9px; padding: 13px 28px; border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; letter-spacing: 0.02em; transition: all 0.24s; }
+    .btn-p { background: linear-gradient(135deg, var(--teal) 0%, var(--blue) 100%); color: #040210; }
     .btn-p:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(0,255,200,0.28); }
-    .btn-g {
-      background: var(--glass); backdrop-filter: var(--blur-sm);
-      border: 1px solid var(--gbrd); color: var(--white);
-    }
+    .btn-g { background: var(--glass); backdrop-filter: var(--blur-sm); border: 1px solid var(--gbrd); color: var(--white); }
     .btn-g:hover { background: var(--glass-hi); transform: translateY(-1px); }
 
     /* Photo card */
-    .photo-card {
-      position: relative; border-radius: 26px;
-      overflow: hidden; min-height: 580px;
-      background: var(--glass);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: 1px solid var(--gbrd);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.06),
-        0 40px 100px rgba(0,0,0,0.55),
-        0 0 80px rgba(147,51,234,0.14),
-        0 0 40px rgba(0,255,200,0.06);
-      cursor: pointer;
-    }
-    .photo-card img {
-      width: 100%; height: 100%; min-height: 580px;
-      object-fit: cover; object-position: center top;
-      display: block;
-    }
-    .photo-card::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(6,4,16,0.82) 100%);
-      pointer-events: none; z-index: 1;
-    }
+    .photo-card { position: relative; border-radius: 26px; overflow: hidden; min-height: 580px; background: var(--glass); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border: 1px solid var(--gbrd); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), 0 40px 100px rgba(0,0,0,0.55), 0 0 80px rgba(147,51,234,0.14); cursor: pointer; }
+    .photo-card::before { content:''; position:absolute; inset:-2px; border-radius:28px; z-index:-1; background:linear-gradient(135deg,rgba(0,255,200,0.3),rgba(176,110,243,0.3),rgba(79,172,254,0.2)); filter:blur(6px); }
+    .photo-card::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,transparent 50%,rgba(6,4,16,0.82) 100%); pointer-events:none; z-index:1; }
+    .photo-card img { width:100%; height:100%; min-height:580px; object-fit:cover; object-position:center top; display:block; }
+    .photo-ph { position:absolute; inset:0; z-index:2; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:var(--muted); font-size:11px; font-weight:600; letter-spacing:0.1em; text-align:center; padding:24px; }
+    .photo-stats { position:absolute; bottom:22px; left:20px; right:20px; z-index:3; display:grid; grid-template-columns:repeat(3,1fr); background:rgba(6,4,16,0.62); backdrop-filter:blur(24px); border:1px solid var(--gbrd-lo); border-radius:16px; overflow:hidden; }
+    .ps { padding:14px 10px; text-align:center; border-right:1px solid var(--gbrd-lo); }
+    .ps:last-child { border-right:none; }
+    .ps-n { font-family:var(--display); font-size:28px; font-weight:800; display:block; line-height:1; background:linear-gradient(135deg,var(--teal),var(--blue)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .ps-l { font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); display:block; margin-top:4px; }
 
-    /* Glow ring on photo card */
-    .photo-card::before {
-      content: ''; position: absolute;
-      inset: -2px; border-radius: 28px; z-index: -1;
-      background: linear-gradient(135deg, rgba(0,255,200,0.3), rgba(176,110,243,0.3), rgba(79,172,254,0.2));
-      filter: blur(6px);
-    }
-
-    .photo-ph {
-      position: absolute; inset: 0; z-index: 2;
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; gap: 14px;
-      color: var(--muted); font-size: 11px; font-weight: 600;
-      letter-spacing: 0.1em; text-align: center; padding: 24px;
-    }
-
-    .photo-stats {
-      position: absolute; bottom: 22px; left: 20px; right: 20px; z-index: 3;
-      display: grid; grid-template-columns: repeat(3,1fr);
-      background: rgba(6,4,16,0.62);
-      backdrop-filter: blur(24px);
-      border: 1px solid var(--gbrd-lo);
-      border-radius: 16px; overflow: hidden;
-    }
-    .ps { padding: 14px 10px; text-align: center; border-right: 1px solid var(--gbrd-lo); }
-    .ps:last-child { border-right: none; }
-    .ps-n { font-family: var(--display); font-size: 28px; font-weight: 800; display: block; line-height: 1; background: linear-gradient(135deg, var(--teal), var(--blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .ps-l { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 4px; }
-
-    /* ════════════════════
-       SECTION SHELL
-    ════════════════════ */
+    /* SECTION */
     .section { padding: 110px 60px; }
-
-    .ey {
-      display: inline-flex; align-items: center; gap: 14px;
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 0.28em; text-transform: uppercase;
-      color: var(--teal); margin-bottom: 18px;
-    }
-    .ey::before { content: ''; display: block; width: 36px; height: 1px; background: linear-gradient(90deg, var(--teal), transparent); }
-    .ey::after  { content: ''; display: block; width: 24px; height: 1px; background: linear-gradient(90deg, transparent, var(--teal)); }
-
-    .sh {
-      font-family: var(--display);
-      font-size: clamp(34px,4.5vw,60px);
-      font-weight: 800; letter-spacing: -0.025em; line-height: 1.05;
-      color: var(--white); margin-bottom: 56px;
-    }
-    .sh .g {
-      background: linear-gradient(130deg, var(--teal) 0%, var(--blue) 50%, var(--purple) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    .ey { display:inline-flex; align-items:center; gap:14px; font-size:10px; font-weight:700; letter-spacing:0.28em; text-transform:uppercase; color:var(--teal); margin-bottom:18px; }
+    .ey::before { content:''; display:block; width:36px; height:1px; background:linear-gradient(90deg,var(--teal),transparent); }
+    .ey::after  { content:''; display:block; width:24px; height:1px; background:linear-gradient(90deg,transparent,var(--teal)); }
+    .sh { font-family:var(--display); font-size:clamp(32px,4.2vw,58px); font-weight:800; letter-spacing:-0.025em; line-height:1.05; color:var(--white); margin-bottom:52px; }
+    .sh .g { background:linear-gradient(130deg,var(--teal) 0%,var(--blue) 50%,var(--purple) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
     /* Glass card */
-    .gc {
+    .gc { background:var(--glass); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--gbrd); border-radius:var(--r); box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05),0 20px 60px rgba(0,0,0,0.32); transition:box-shadow 0.32s,border-color 0.32s,transform 0.32s; position:relative; overflow:hidden; }
+    .gc::before { content:''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,0.04) 50%,transparent 70%); background-size:200% 100%; animation:shimmer 6s ease-in-out infinite; pointer-events:none; }
+    .gc:hover { box-shadow:inset 0 0 0 1px rgba(255,255,255,0.11),0 32px 80px rgba(0,0,0,0.45),0 0 60px rgba(0,255,200,0.09); border-color:rgba(255,255,255,0.24); transform:translateY(-4px); }
+    @keyframes shimmer { 0%,100%{background-position:200% 0;} 50%{background-position:-200% 0;} }
+
+    /* ═══════════════════
+       TRUSTED BY MARQUEE
+    ═══════════════════ */
+    .trusted-wrap {
+      padding: 0 60px 80px;
+      position: relative; z-index: 2;
+    }
+    .trusted-label {
+      text-align: center;
+      font-size: 9.5px; font-weight: 700;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 28px;
+    }
+    .marquee-outer {
+      overflow: hidden;
+      position: relative;
+      padding: 4px 0;
+    }
+    .marquee-outer::before,
+    .marquee-outer::after {
+      content: '';
+      position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2;
+    }
+    .marquee-outer::before { left: 0; background: linear-gradient(90deg, #060410, transparent); }
+    .marquee-outer::after  { right: 0; background: linear-gradient(90deg, transparent, #060410); }
+
+    .marquee-track {
+      display: flex; gap: 0;
+      animation: marquee-scroll 28s linear infinite;
+      width: max-content;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 14px 40px;
+      white-space: nowrap;
+      border-right: 1px solid var(--gbrd-lo);
+    }
+    .marquee-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--teal); opacity: 0.5;
+      flex-shrink: 0;
+    }
+    .marquee-name {
+      font-family: var(--display);
+      font-size: 16px; font-weight: 700;
+      color: rgba(238,243,255,0.45);
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+    .marquee-item:hover .marquee-name { color: var(--white); }
+    .marquee-item:hover .marquee-dot  { opacity: 1; box-shadow: 0 0 8px var(--teal); }
+
+    /* ═══════════════════
+       CONSULTANCY SERVICES
+    ═══════════════════ */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .svc-card {
+      padding: 32px 28px 28px;
+      border-radius: var(--r);
       background: var(--glass);
       backdrop-filter: var(--blur);
       -webkit-backdrop-filter: var(--blur);
-      border: 1px solid var(--gbrd);
-      border-radius: var(--r);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.05),
-        0 20px 60px rgba(0,0,0,0.32),
-        0 0 30px rgba(0,255,200,0.03);
-      transition: box-shadow 0.32s, border-color 0.32s, transform 0.32s;
-    }
-    .gc:hover {
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.11),
-        0 32px 80px rgba(0,0,0,0.45),
-        0 0 60px rgba(0,255,200,0.09),
-        0 0 30px rgba(176,110,243,0.07);
-      border-color: rgba(255,255,255,0.24);
-      transform: translateY(-4px);
-    }
-
-    /* Shimmer on glass cards */
-    .gc::before {
-      content: '';
-      position: absolute; inset: 0;
-      border-radius: inherit;
-      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.04) 50%, transparent 70%);
-      background-size: 200% 100%;
-      animation: shimmer 6s ease-in-out infinite;
-      pointer-events: none;
-    }
-    .gc { position: relative; overflow: hidden; }
-    @keyframes shimmer { 0%,100% { background-position: 200% 0; } 50% { background-position: -200% 0; } }
-
-    /* ════════════════════
-       ABOUT
-    ════════════════════ */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .about-pad { padding: 50px 52px; }
-    .about-body { font-size: 16px; font-weight: 300; color: var(--muted); line-height: 1.92; }
-    .about-body p + p { margin-top: 18px; }
-    .about-body strong { color: var(--white); font-weight: 500; }
-    .about-r { display: flex; flex-direction: column; gap: 20px; }
-
-    .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; border-radius: var(--r); overflow: hidden; }
-    .kpi { padding: 28px 24px; background: rgba(255,255,255,0.055); border: 1px solid var(--gbrd-lo); }
-    .kpi-n { font-family: var(--display); font-size: 46px; font-weight: 800; display: block; line-height: 1; background: linear-gradient(135deg, var(--teal), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .kpi-n sup { font-size: 0.42em; }
-    .kpi-l { font-size: 9.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 6px; }
-
-    .tags-pad { padding: 28px 32px; }
-    .tags-lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag {
-      font-size: 12px; font-weight: 500; padding: 6px 16px; border-radius: 100px;
-      border: 1px solid var(--gbrd-lo); background: var(--glass);
-      color: var(--muted); cursor: default; transition: all 0.2s;
-    }
-    .tag.hi, .tag:hover { border-color: var(--teal-brd); color: var(--teal); background: var(--teal-dim); }
-
-    /* ════════════════════
-       EXPERIENCE
-    ════════════════════ */
-    .exp-list { display: flex; flex-direction: column; gap: 16px; }
-    .exp-row {
-      padding: 36px 44px; display: grid;
-      grid-template-columns: 180px 1fr; gap: 40px; align-items: start;
-      cursor: default;
-    }
-    .exp-row:hover .ecn { color: var(--teal); }
-    .ecn { font-family: var(--display); font-size: 15.5px; font-weight: 800; color: var(--white); margin-bottom: 5px; transition: color 0.2s; line-height: 1.25; }
-    .eloc { font-size: 11px; color: var(--muted); font-weight: 500; letter-spacing: 0.04em; }
-    .erole { display: inline-flex; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); padding: 4px 12px; border: 1px solid var(--teal-brd); background: rgba(0,255,200,0.07); border-radius: 100px; margin-bottom: 12px; }
-    .edesc { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.82; max-width: 560px; }
-
-    /* ════════════════════
-       SKILLS
-    ════════════════════ */
-    .sk-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .sk-pad { padding: 48px 52px; }
-    .sk-item { margin-bottom: 28px; }
-    .sk-item:last-child { margin-bottom: 0; }
-    .sk-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
-    .sk-name { font-size: 13.5px; font-weight: 500; color: var(--white); }
-    .sk-pct { font-family: var(--display); font-size: 13px; font-weight: 800; color: var(--teal); }
-    .sk-trk { height: 3px; background: rgba(255,255,255,0.08); border-radius: 100px; position: relative; }
-    .sk-fill {
-      height: 100%; border-radius: 100px;
-      background: linear-gradient(90deg, var(--teal), var(--blue), var(--purple));
-      transform: scaleX(0); transform-origin: left;
-      position: relative;
-    }
-    .sk-fill.go { animation: bfill 1.7s cubic-bezier(0.22,1,0.36,1) forwards; }
-    .sk-fill::after { content: ''; position: absolute; right: -1px; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 12px var(--teal); transform: translateY(-50%); }
-    @keyframes bfill { to { transform: scaleX(1); } }
-
-    .cp-pad { padding: 48px 52px; }
-    .cp-title { font-size: 9.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 26px; }
-    .cp-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-    .cp-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
-    .cpdot { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--teal-brd); background: rgba(0,255,200,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
-    .cpdot::after { content: ''; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--blue)); }
-
-    /* ════════════════════
-       TESTIMONIALS
-    ════════════════════ */
-    .tg { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-    .tc { padding: 46px 46px; display: flex; flex-direction: column; gap: 22px; }
-    .tq { font-size: 72px; line-height: 0.65; font-family: Georgia, serif; font-weight: 900; background: linear-gradient(135deg, var(--teal), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: 0.4; user-select: none; }
-    .tt { font-size: 15px; font-weight: 300; color: var(--muted); line-height: 1.9; font-style: italic; flex: 1; }
-    .tp { display: flex; align-items: center; gap: 16px; padding-top: 22px; border-top: 1px solid var(--gbrd-lo); }
-    .tav { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, rgba(0,255,200,0.12), rgba(176,110,243,0.15)); border: 1px solid var(--teal-brd); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 21px; font-weight: 800; color: var(--teal); flex-shrink: 0; }
-    .tn { font-family: var(--display); font-size: 14.5px; font-weight: 700; color: var(--white); }
-    .to { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
-
-    /* ════════════════════
-       FOOTER
-    ════════════════════ */
-    footer { padding: 80px 60px 52px; }
-    .fg {
-      background: rgba(255,255,255,0.055);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-      border: 1px solid var(--gbrd);
-      border-radius: 28px; padding: 64px;
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.05),
-        0 40px 100px rgba(0,0,0,0.45),
-        0 0 80px rgba(0,255,200,0.04),
-        0 0 60px rgba(147,51,234,0.06);
-      position: relative; overflow: hidden;
-    }
-    .fg::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(0,255,200,0.4), rgba(176,110,243,0.3), transparent);
-    }
-    .ft { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 60px; padding-bottom: 52px; margin-bottom: 48px; border-bottom: 1px solid var(--gbrd-lo); }
-    .fn { font-family: var(--display); font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.08; color: var(--white); margin-bottom: 14px; }
-    .fn span { background: linear-gradient(130deg, var(--teal), var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .fs { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.72; max-width: 300px; margin-bottom: 28px; }
-    .fcta { display: inline-flex; align-items: center; gap: 9px; padding: 12px 26px; border-radius: 10px; background: linear-gradient(135deg, var(--teal), var(--blue)); color: #040210; font-size: 13.5px; font-weight: 700; text-decoration: none; transition: all 0.22s; }
-    .fcta:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 10px 32px rgba(0,255,200,0.24); }
-    .clbl { font-size: 9.5px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
-
-    /* Contact links */
-    .cl { display: flex; flex-direction: column; gap: 12px; }
-    .ci { display: flex; align-items: center; gap: 13px; text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 400; transition: color 0.22s; }
-    .ci:hover { color: var(--white); }
-    .cic { width: 38px; height: 38px; border-radius: 11px; background: var(--glass); border: 1px solid var(--gbrd-lo); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.22s; }
-    .ci:hover .cic { border-color: var(--teal-brd); background: var(--teal-dim); }
-    .cic svg { color: var(--muted); transition: color 0.22s; }
-    .ci:hover .cic svg { color: var(--teal); }
-
-    /* Social icon rows */
-    .sl { display: flex; flex-direction: column; gap: 12px; }
-    .si {
-      display: flex; align-items: center; gap: 14px;
-      text-decoration: none;
-      padding: 13px 17px; border-radius: 13px;
       border: 1px solid var(--gbrd-lo);
-      background: rgba(255,255,255,0.04);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04), 0 16px 48px rgba(0,0,0,0.28);
+      cursor: pointer; position: relative; overflow: hidden;
+      transition: all 0.28s;
+      text-decoration: none;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .svc-card::before { content:''; position:absolute; inset:0; border-radius:inherit; background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,0.035) 50%,transparent 70%); background-size:200% 100%; animation:shimmer 8s ease-in-out infinite; pointer-events:none; }
+    .svc-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--teal-brd);
+      background: rgba(0,255,200,0.06);
+      box-shadow: inset 0 0 0 1px rgba(0,255,200,0.12), 0 28px 64px rgba(0,0,0,0.4), 0 0 40px rgba(0,255,200,0.1);
+    }
+    .svc-card:hover .svc-icon-wrap { background: rgba(0,255,200,0.15); border-color: var(--teal-brd); }
+    .svc-card:hover .svc-icon-wrap svg { color: var(--teal); }
+    .svc-card:hover .svc-title { color: var(--teal); }
+    .svc-card:hover .svc-arrow { opacity: 1; transform: translate(3px,-3px); }
+
+    .svc-icon-wrap {
+      width: 48px; height: 48px; border-radius: 13px;
+      border: 1px solid var(--gbrd-lo);
+      background: rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center;
       transition: all 0.24s;
     }
-    .si:hover { border-color: var(--teal-brd); background: rgba(0,255,200,0.07); transform: translateX(5px); }
-    .sic { width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .sil { font-size: 14px; font-weight: 500; color: var(--white); }
+    .svc-icon-wrap svg { color: var(--muted); transition: color 0.24s; }
 
-    .fb { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted); }
-
-    /* ── Scroll reveal ── */
-    .rv { opacity: 0; transform: translateY(30px); transition: opacity 0.78s ease, transform 0.78s ease; }
-    .rv.in { opacity: 1; transform: none; }
-
-    /* ── Responsive ── */
-    @media (max-width: 1040px) {
-      .hero, .about-grid, .sk-wrap, .tg, .ft { grid-template-columns: 1fr; }
-      .exp-row { grid-template-columns: 1fr; gap: 12px; }
-      .hero, .section { padding-left: 28px; padding-right: 28px; }
-      footer { padding: 40px 20px; }
-      .fg { padding: 38px 26px; }
-      nav { padding: 0 28px; }
+    .svc-title {
+      font-family: var(--display);
+      font-size: 16px; font-weight: 800;
+      color: var(--white); line-height: 1.2;
+      transition: color 0.24s;
     }
-    @media (max-width: 600px) {
-      .nav-links li:not(:last-child) { display: none; }
-      .hero-name { font-size: 48px; }
+    .svc-desc { font-size: 12.5px; font-weight: 300; color: var(--muted); line-height: 1.7; flex: 1; }
+    .svc-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      margin-top: 4px;
+      font-size: 11.5px; font-weight: 600;
+      color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .svc-arrow { transition: all 0.24s; opacity: 0.6; }
+
+    /* ═══════════════════
+       ABOUT
+    ═══════════════════ */
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .about-pad { padding:50px 52px; }
+    .about-body { font-size:16px; font-weight:300; color:var(--muted); line-height:1.92; }
+    .about-body p+p { margin-top:18px; }
+    .about-body strong { color:var(--white); font-weight:500; }
+    .about-r { display:flex; flex-direction:column; gap:20px; }
+    .kpi-grid { display:grid; grid-template-columns:1fr 1fr; gap:3px; border-radius:var(--r); overflow:hidden; }
+    .kpi { padding:28px 24px; background:rgba(255,255,255,0.055); border:1px solid var(--gbrd-lo); }
+    .kpi-n { font-family:var(--display); font-size:46px; font-weight:800; display:block; line-height:1; background:linear-gradient(135deg,var(--teal),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .kpi-n sup { font-size:0.42em; }
+    .kpi-l { font-size:9.5px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); display:block; margin-top:6px; }
+    .tags-pad { padding:28px 32px; }
+    .tags-lbl { font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .tag { font-size:12px; font-weight:500; padding:6px 16px; border-radius:100px; border:1px solid var(--gbrd-lo); background:var(--glass); color:var(--muted); cursor:default; transition:all 0.2s; }
+    .tag.hi,.tag:hover { border-color:var(--teal-brd); color:var(--teal); background:var(--teal-dim); }
+
+    /* EXPERIENCE */
+    .exp-list { display:flex; flex-direction:column; gap:16px; }
+    .exp-row { padding:36px 44px; display:grid; grid-template-columns:180px 1fr; gap:40px; align-items:start; cursor:default; }
+    .exp-row:hover .ecn { color:var(--teal); }
+    .ecn { font-family:var(--display); font-size:15.5px; font-weight:800; color:var(--white); margin-bottom:5px; transition:color 0.2s; line-height:1.25; }
+    .eloc { font-size:11px; color:var(--muted); font-weight:500; letter-spacing:0.04em; }
+    .erole { display:inline-flex; font-size:10px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); padding:4px 12px; border:1px solid var(--teal-brd); background:rgba(0,255,200,0.07); border-radius:100px; margin-bottom:12px; }
+    .edesc { font-size:14px; font-weight:300; color:var(--muted); line-height:1.82; max-width:560px; }
+
+    /* SKILLS */
+    .sk-wrap { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .sk-pad { padding:48px 52px; }
+    .sk-item { margin-bottom:28px; }
+    .sk-item:last-child { margin-bottom:0; }
+    .sk-row { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
+    .sk-name { font-size:13.5px; font-weight:500; color:var(--white); }
+    .sk-pct { font-family:var(--display); font-size:13px; font-weight:800; color:var(--teal); }
+    .sk-trk { height:3px; background:rgba(255,255,255,0.08); border-radius:100px; position:relative; }
+    .sk-fill { height:100%; border-radius:100px; background:linear-gradient(90deg,var(--teal),var(--blue),var(--purple)); transform:scaleX(0); transform-origin:left; position:relative; }
+    .sk-fill.go { animation:bfill 1.7s cubic-bezier(0.22,1,0.36,1) forwards; }
+    .sk-fill::after { content:''; position:absolute; right:-1px; top:50%; width:9px; height:9px; border-radius:50%; background:var(--teal); box-shadow:0 0 12px var(--teal); transform:translateY(-50%); }
+    @keyframes bfill { to { transform:scaleX(1); } }
+    .cp-pad { padding:48px 52px; }
+    .cp-title { font-size:9.5px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:26px; }
+    .cp-list { list-style:none; display:flex; flex-direction:column; gap:16px; }
+    .cp-list li { display:flex; align-items:flex-start; gap:14px; font-size:14.5px; font-weight:300; color:var(--muted); line-height:1.65; }
+    .cpdot { width:24px; height:24px; border-radius:50%; border:1px solid var(--teal-brd); background:rgba(0,255,200,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .cpdot::after { content:''; width:7px; height:7px; border-radius:50%; background:linear-gradient(135deg,var(--teal),var(--blue)); }
+
+    /* FOOTER */
+    footer { padding:80px 60px 52px; }
+    .fg { background:rgba(255,255,255,0.055); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur); border:1px solid var(--gbrd); border-radius:28px; padding:64px; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.05),0 40px 100px rgba(0,0,0,0.45); position:relative; overflow:hidden; }
+    .fg::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(0,255,200,0.4),rgba(176,110,243,0.3),transparent); }
+    .ft { display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:60px; padding-bottom:52px; margin-bottom:48px; border-bottom:1px solid var(--gbrd-lo); }
+    .fn { font-family:var(--display); font-size:40px; font-weight:800; letter-spacing:-0.03em; line-height:1.08; color:var(--white); margin-bottom:14px; }
+    .fn span { background:linear-gradient(130deg,var(--teal),var(--blue),var(--purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .fs { font-size:13.5px; font-weight:300; color:var(--muted); line-height:1.72; max-width:300px; margin-bottom:28px; }
+    .fcta { display:inline-flex; align-items:center; gap:9px; padding:12px 26px; border-radius:10px; background:linear-gradient(135deg,var(--teal),var(--blue)); color:#040210; font-size:13.5px; font-weight:700; text-decoration:none; transition:all 0.22s; }
+    .fcta:hover { opacity:0.88; transform:translateY(-2px); box-shadow:0 10px 32px rgba(0,255,200,0.24); }
+    .clbl { font-size:9.5px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); margin-bottom:22px; }
+    .cl { display:flex; flex-direction:column; gap:12px; }
+    .ci { display:flex; align-items:center; gap:13px; text-decoration:none; color:var(--muted); font-size:14px; font-weight:400; transition:color 0.22s; }
+    .ci:hover { color:var(--white); }
+    .cic { width:38px; height:38px; border-radius:11px; background:var(--glass); border:1px solid var(--gbrd-lo); display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.22s; }
+    .ci:hover .cic { border-color:var(--teal-brd); background:var(--teal-dim); }
+    .cic svg { color:var(--muted); transition:color 0.22s; }
+    .ci:hover .cic svg { color:var(--teal); }
+    .sl { display:flex; flex-direction:column; gap:12px; }
+    .si { display:flex; align-items:center; gap:14px; text-decoration:none; padding:13px 17px; border-radius:13px; border:1px solid var(--gbrd-lo); background:rgba(255,255,255,0.04); transition:all 0.24s; }
+    .si:hover { border-color:var(--teal-brd); background:rgba(0,255,200,0.07); transform:translateX(5px); }
+    .sic { width:36px; height:36px; border-radius:9px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .sil { font-size:14px; font-weight:500; color:var(--white); }
+    .fb { display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); }
+
+    /* BOOK A CALL BANNER */
+    .book-banner {
+      margin-top: 48px;
+      display: flex; align-items: center; justify-content: space-between; gap: 40px;
+      padding: 44px 52px;
+      background: linear-gradient(135deg, rgba(0,255,200,0.07) 0%, rgba(79,172,254,0.06) 50%, rgba(176,110,243,0.07) 100%);
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      border: 1px solid var(--teal-brd);
+      border-radius: var(--r);
+      box-shadow: inset 0 0 0 1px rgba(0,255,200,0.06), 0 20px 60px rgba(0,0,0,0.3), 0 0 60px rgba(0,255,200,0.06);
+      flex-wrap: wrap;
+    }
+    .book-left { flex: 1; min-width: 260px; }
+    .book-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    .book-title { font-family: var(--display); font-size: clamp(20px, 2.5vw, 30px); font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.15; }
+    .book-sub { font-size: 14px; font-weight: 300; color: var(--muted); line-height: 1.7; max-width: 440px; }
+    .book-right { display: flex; flex-direction: column; align-items: center; gap: 10px; flex-shrink: 0; }
+    .book-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 34px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      color: #040210; font-size: 15px; font-weight: 700;
+      text-decoration: none; letter-spacing: 0.02em;
+      transition: all 0.24s;
+      box-shadow: 0 8px 32px rgba(0,255,200,0.22);
+      white-space: nowrap;
+    }
+    .book-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,255,200,0.32); opacity: 0.92; }
+    .book-note { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; }
+
+    /* Scroll reveal */
+    .rv { opacity:0; transform:translateY(30px); transition:opacity 0.78s ease,transform 0.78s ease; }
+    .rv.in { opacity:1; transform:none; }
+
+    /* Responsive */
+    @media (max-width: 1200px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 1040px) {
+      .hero,.about-grid,.sk-wrap,.ft { grid-template-columns:1fr; }
+      .exp-row { grid-template-columns:1fr; gap:12px; }
+      .hero,.section,.trusted-wrap { padding-left:28px; padding-right:28px; }
+      footer { padding:40px 20px; }
+      .fg { padding:38px 26px; }
+      nav { padding:0 28px; }
+      .services-grid { grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links li:not(:last-child) { display:none; }
+      .hero-name { font-size:46px; }
+      .services-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Connectivity canvas -->
   <canvas id="bgCanvas"></canvas>
-
-  <!-- Gradient orbs -->
   <div class="orbs" aria-hidden="true">
-    <div class="orb o1"></div>
-    <div class="orb o2"></div>
-    <div class="orb o3"></div>
-    <div class="orb o4"></div>
-    <div class="orb o5"></div>
+    <div class="orb o1"></div><div class="orb o2"></div>
+    <div class="orb o3"></div><div class="orb o4"></div><div class="orb o5"></div>
   </div>
 
-  <!-- ══ NAV ══ -->
+  <!-- NAV -->
   <nav id="mainNav">
-    <a class="nav-logo" href="#hero">Anisa <em>Kumari</em></a>
+    <a class="nav-logo" href="#hero">Kumari <em>Anisa</em></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="mailto:anisa.kar9@gmail.com" class="ncta">Contact</a></li>
+      <li><a href="mailto:anisa.kar9@gmail.com" class="ncta">Work With Me</a></li>
     </ul>
   </nav>
 
-  <!-- ══ HERO ══ -->
+  <!-- HERO -->
   <div class="hero" id="hero">
-    <div class="hero-left rv">
-      <div class="badge"><span class="bdot"></span> MBA &nbsp;·&nbsp; Founder &nbsp;·&nbsp; Strategist</div>
-      <h1 class="hero-name">
-        Anisa<br /><span class="grd">Kumari.</span>
-      </h1>
-      <p class="hero-sub">Building strategies that scale.</p>
+    <div class="rv">
+      <div class="badge"><span class="bdot"></span> MBA &nbsp;·&nbsp; Founder &nbsp;·&nbsp; Consultant</div>
+      <h1 class="hero-name">Kumari<br /><span class="grd">Anisa.</span></h1>
+      <p class="hero-sub">Strategy that works across every industry.</p>
       <p class="hero-bio">
-        <strong>7 years</strong> at the intersection of science, business and strategy. From AI startups to global pharma, I transform complex market challenges into scalable growth engines through inbound, outbound and partnership-led approaches.
+        <strong>7+ years</strong> building growth engines across <strong>research, biotech, proptech, AI startups and transport</strong>. I bring the same rigour to every engagement: from inbound content funnels to outbound pipeline, influencer campaigns to institutional fundraising and grant writing.
       </p>
+      <div class="industry-pills">
+        <span class="ipill">Research</span>
+        <span class="ipill">Biotech</span>
+        <span class="ipill">Proptech</span>
+        <span class="ipill">AI Startups</span>
+        <span class="ipill">Transport</span>
+        <span class="ipill">Life Sciences</span>
+        <span class="ipill">ESG</span>
+      </div>
       <div class="ctas">
-        <a class="btn btn-p" href="mailto:anisa.kar9@gmail.com">
+        <a class="btn btn-p" href="#services">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+          View Services
+        </a>
+        <a class="btn btn-g" href="mailto:anisa.kar9@gmail.com">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           Get in Touch
-        </a>
-        <a class="btn btn-g" href="https://www.linkedin.com/in/kumari-a-43b6311b7" target="_blank" rel="noopener">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
         </a>
       </div>
     </div>
 
     <div class="photo-card rv" style="transition-delay:0.15s" onclick="document.getElementById('piInput').click()">
-      <img id="piImg" src="anisa-photo.jpg" alt="Anisa Kumari"
+      <img id="piImg" src="anisa-photo.jpg" alt="Kumari Anisa"
            onerror="this.style.display='none';document.getElementById('piPh').style.display='flex'" />
       <div id="piPh" class="photo-ph" style="display:none;">
         <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        Click to upload photo<br />or save as anisa-photo.jpg
+        Click to upload photo
       </div>
       <div class="photo-stats">
         <div class="ps"><span class="ps-n">7<sup>+</sup></span><span class="ps-l">Years</span></div>
+        <div class="ps"><span class="ps-n">6+</span><span class="ps-l">Industries</span></div>
         <div class="ps"><span class="ps-n">5+</span><span class="ps-l">Orgs</span></div>
-        <div class="ps"><span class="ps-n">3</span><span class="ps-l">Industries</span></div>
       </div>
     </div>
     <input type="file" id="piInput" accept="image/*" style="display:none" onchange="swapPhoto(event)" />
   </div>
 
-  <!-- ══ ABOUT ══ -->
+  <!-- TRUSTED BY MARQUEE -->
+  <div class="trusted-wrap">
+    <p class="trusted-label">Trusted by</p>
+    <div class="marquee-outer">
+      <div class="marquee-track" id="marqueeTrack">
+        <!-- Items duplicated in JS for seamless loop -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section" id="services">
+    <p class="ey">02 &nbsp; Consultancy</p>
+    <h2 class="sh">How I can <span class="g">help you.</span></h2>
+
+    <div class="services-grid">
+
+      <a class="svc-card rv" href="mailto:anisa.kar9@gmail.com?subject=Business Development Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <p class="svc-title">Business Development</p>
+        <p class="svc-desc">Building partnerships, market entry strategy, revenue pipeline design and commercial growth across new and existing verticals.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.06s" href="mailto:anisa.kar9@gmail.com?subject=GTM Strategy Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        </div>
+        <p class="svc-title">GTM Strategy</p>
+        <p class="svc-desc">Go-to-market planning, launch playbooks, positioning frameworks and segmentation strategy for startups and scale-ups.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.12s" href="mailto:anisa.kar9@gmail.com?subject=Inbound Marketing Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <p class="svc-title">Inbound Marketing</p>
+        <p class="svc-desc">Content strategy, SEO, thought leadership, lead magnet design and funnel architecture to attract and convert ideal customers.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.18s" href="mailto:anisa.kar9@gmail.com?subject=Outbound Marketing Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </div>
+        <p class="svc-title">Outbound Marketing</p>
+        <p class="svc-desc">Cold outreach, email sequences, direct pipeline prospecting and account-based marketing campaigns that open doors.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.24s" href="mailto:anisa.kar9@gmail.com?subject=Influencer Marketing Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <p class="svc-title">Influencer Marketing</p>
+        <p class="svc-desc">Creator partnerships, brand ambassador programmes, campaign management and influencer vetting for authentic brand growth.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.30s" href="mailto:anisa.kar9@gmail.com?subject=Operations Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+        </div>
+        <p class="svc-title">Operations</p>
+        <p class="svc-desc">Process design, systems implementation, team structure and operational efficiency frameworks that scale with the business.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.36s" href="mailto:anisa.kar9@gmail.com?subject=Grant Writing Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <p class="svc-title">Grant Writing</p>
+        <p class="svc-desc">Research grant applications, institutional funding proposals and EU or public-sector bid writing for science and innovation ventures.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.42s" href="mailto:anisa.kar9@gmail.com?subject=Fundraising Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <p class="svc-title">Fundraising</p>
+        <p class="svc-desc">Investor relations, pitch deck strategy, capital raising narrative, LP and VC outreach and fundraising campaign design.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.48s" href="mailto:anisa.kar9@gmail.com?subject=Career Advisory Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <p class="svc-title">Career Advisory</p>
+        <p class="svc-desc">One to one career strategy sessions covering job transitions, personal branding, positioning in competitive markets and navigating industries from research to startups to corporates.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.54s" href="mailto:anisa.kar9@gmail.com?subject=Mentorship Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/><path d="M18 8a4 4 0 0 1 0 0"/><circle cx="19" cy="6" r="2.5"/></svg>
+        </div>
+        <p class="svc-title">Mentorship</p>
+        <p class="svc-desc">Ongoing mentorship for founders, early career professionals and career switchers. Building confidence, strategic clarity and the mindset to grow across industries.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+      <a class="svc-card rv" style="transition-delay:0.60s" href="mailto:anisa.kar9@gmail.com?subject=Prompt Techniques Enquiry">
+        <div class="svc-icon-wrap">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+        </div>
+        <p class="svc-title">AI Prompt Techniques</p>
+        <p class="svc-desc">Practical AI skills for non-technical professionals. Learn how to write effective prompts, automate everyday tasks and use AI tools to work smarter across marketing, strategy and operations.</p>
+        <span class="svc-cta">Enquire <svg class="svc-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+      </a>
+
+    </div>
+
+    <!-- BOOK A CALL BANNER -->
+    <div class="book-banner rv" style="transition-delay:0.2s">
+      <div class="book-left">
+        <p class="book-eyebrow">Ready to get started?</p>
+        <p class="book-title">Book a free 30 minute consultation.</p>
+        <p class="book-sub">Not sure which service fits? Let us talk it through. Pick a time that works for you and I will come prepared.</p>
+      </div>
+      <div class="book-right">
+        <a class="book-btn" href="mailto:anisa.kar9@gmail.com?subject=Book a Consultation" target="_blank" rel="noopener">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Call
+        </a>
+        <p class="book-note">Responds within 24 hours</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ABOUT -->
   <div class="section" id="about">
-    <p class="ey">01 &nbsp; About</p>
-    <h2 class="sh">Science-trained. Strategy-driven.<br /><span class="g">Berlin-based.</span></h2>
+    <p class="ey">03 &nbsp; About</p>
+    <h2 class="sh">Built across industries.<br /><span class="g">Berlin-based.</span></h2>
     <div class="about-grid">
       <div class="gc about-pad rv">
         <div class="about-body">
-          <p>I am a <strong>founder and business strategist</strong> with over seven years of experience spanning mobility, life sciences, AI and biotech. My career bridges scientific rigour with commercial instinct — built to operate where complexity and opportunity intersect.</p>
-          <p>I lead growth through both <strong>inbound and outbound marketing</strong> strategies, combining content and brand-led attraction with direct pipeline development and partnership channels. My approach to fundraising is relationship-first, grounded in investor psychology and long-term trust building.</p>
-          <p>I founded Belleza Biotech, directed strategic operations at NISER, contributed to transformation at DB S-Bahn Berlin and advised Bayer AG on ESG frameworks. Every engagement sharpens my ability to move fast, communicate with precision and deliver outcomes that endure.</p>
+          <p>I am a <strong>founder, strategist and consultant</strong> with over seven years of experience spanning research institutions, biotech ventures, proptech, AI startups and one of Europe's largest transport networks. This breadth is the foundation of a genuinely versatile strategic toolkit.</p>
+          <p>I approach every engagement through both <strong>inbound and outbound lenses</strong>, combining content driven demand generation with direct pipeline development. My influencer marketing work has built authentic brand communities. My grant writing has secured institutional funding. My fundraising strategy is grounded in investor psychology and long term relationship building.</p>
         </div>
       </div>
       <div class="about-r rv" style="transition-delay:0.12s">
         <div class="kpi-grid">
           <div class="kpi"><span class="kpi-n">7<sup>+</sup></span><span class="kpi-l">Years Exp.</span></div>
+          <div class="kpi"><span class="kpi-n">6+</span><span class="kpi-l">Industries</span></div>
           <div class="kpi"><span class="kpi-n">5+</span><span class="kpi-l">Organisations</span></div>
-          <div class="kpi"><span class="kpi-n">3</span><span class="kpi-l">Industries</span></div>
           <div class="kpi"><span class="kpi-n">MBA</span><span class="kpi-l">Graduate</span></div>
         </div>
         <div class="gc tags-pad">
           <p class="tags-lbl">Areas of Expertise</p>
           <div class="tags">
             <span class="tag hi">MBA</span><span class="tag hi">Founder</span>
-            <span class="tag">Inbound Marketing</span><span class="tag">Outbound Marketing</span>
-            <span class="tag">GTM Strategy</span><span class="tag">ESG</span>
-            <span class="tag">Grant Writing</span><span class="tag">Fundraising</span>
-            <span class="tag">Investor Relations</span><span class="tag">Business Development</span>
-            <span class="tag">Operations</span>
+            <span class="tag">GTM Strategy</span><span class="tag">Inbound Marketing</span>
+            <span class="tag">Outbound Marketing</span><span class="tag">Influencer Marketing</span>
+            <span class="tag">ESG</span><span class="tag">Grant Writing</span>
+            <span class="tag">Fundraising</span><span class="tag">Investor Relations</span>
+            <span class="tag">Business Development</span><span class="tag">Operations</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ══ EXPERIENCE ══ -->
+  <!-- EXPERIENCE -->
   <div class="section" id="work">
-    <p class="ey">02 &nbsp; Work</p>
+    <p class="ey">04 &nbsp; Work</p>
     <h2 class="sh">Where I have <span class="g">built.</span></h2>
     <div class="exp-list">
-
       <div class="gc exp-row rv">
         <div><p class="ecn">Jouly KI</p><p class="eloc">Berlin, Germany · AI</p></div>
-        <div>
-          <span class="erole">GTM Strategy</span>
-          <p class="edesc">Led go-to-market strategy for an AI-native startup. Defined positioning, built inbound content funnels and outbound partnership pipelines, translating product value into commercial frameworks for enterprise and SMB audiences across European markets.</p>
-        </div>
+        <div><span class="erole">GTM Strategy</span><p class="edesc">Led go to market strategy for an AI startup. Defined positioning, built inbound content funnels and outbound partnership pipelines, translating product value into commercial frameworks for enterprise and SMB audiences across European markets.</p></div>
       </div>
-
       <div class="gc exp-row rv">
-        <div><p class="ecn">DB S-Bahn Berlin</p><p class="eloc">Berlin, Germany · Mobility</p></div>
-        <div>
-          <span class="erole">GTM and Strategy</span>
-          <p class="edesc">Contributed to go-to-market and strategic initiatives within one of Europe's largest urban rail networks. Supported mobility transformation projects and stakeholder engagement across the Deutsche Bahn ecosystem.</p>
-        </div>
+        <div><p class="ecn">DB S-Bahn Berlin</p><p class="eloc">Berlin, Germany · Transport</p></div>
+        <div><span class="erole">GTM and Strategy</span><p class="edesc">Contributed to go-to-market and strategic initiatives within one of Europe's largest urban rail networks. Supported mobility transformation projects and stakeholder engagement across the Deutsche Bahn ecosystem.</p></div>
       </div>
-
       <div class="gc exp-row rv">
         <div><p class="ecn">Bayer AG</p><p class="eloc">Germany · Life Sciences</p></div>
-        <div>
-          <span class="erole">ESG Strategy</span>
-          <p class="edesc">Drove ESG strategy within a global life sciences leader. Contributed to sustainability frameworks, stakeholder reporting and cross-functional ESG integration across healthcare and agriculture divisions at one of the world's most recognised science companies.</p>
-        </div>
+        <div><span class="erole">ESG Strategy</span><p class="edesc">Drove ESG strategy within a global life sciences leader. Contributed to sustainability frameworks, stakeholder reporting and ESG integration across healthcare and agriculture divisions.</p></div>
       </div>
-
       <div class="gc exp-row rv">
         <div><p class="ecn">Belleza Biotech</p><p class="eloc">Biotech · Consumer Science</p></div>
-        <div>
-          <span class="erole">Founder and Director</span>
-          <p class="edesc">Founded and directed Belleza Biotech, a science-led consumer biotech venture. Led all strategic and operational functions including communications, marketing strategy, grant writing and fundraising. Built the company from concept through to institutional recognition, trusted by partner companies in the sector.</p>
-        </div>
+        <div><span class="erole">Founder and Director</span><p class="edesc">Founded and directed Belleza Biotech, a consumer biotech venture. Led all strategic and operational functions including communications, marketing strategy, grant writing and fundraising. Trusted by partner companies across the sector.</p></div>
       </div>
-
       <div class="gc exp-row rv">
         <div><p class="ecn">NISER</p><p class="eloc">India · Research</p></div>
-        <div>
-          <span class="erole">Operations and Strategy Manager</span>
-          <p class="edesc">Managed operations and strategy at the National Institute of Science Education and Research. Built the analytical rigour and institutional systems thinking that underpins a career in evidence-driven business strategy and fundraising.</p>
-        </div>
+        <div><span class="erole">Operations and Strategy Manager</span><p class="edesc">Managed operations and strategy at the National Institute of Science Education and Research. Built the analytical rigour and systems thinking that underpins a career spanning six industries.</p></div>
       </div>
-
     </div>
   </div>
 
-  <!-- ══ SKILLS ══ -->
+  <!-- SKILLS -->
   <div class="section" id="skills">
-    <p class="ey">03 &nbsp; Proficiency</p>
+    <p class="ey">05 &nbsp; Proficiency</p>
     <h2 class="sh">What I do <span class="g">well.</span></h2>
     <div class="sk-wrap">
       <div class="gc sk-pad rv">
-        <div class="sk-item">
-          <div class="sk-row"><span class="sk-name">Business Development</span><span class="sk-pct">92%</span></div>
-          <div class="sk-trk"><div class="sk-fill" style="width:92%"></div></div>
-        </div>
-        <div class="sk-item">
-          <div class="sk-row"><span class="sk-name">Inbound Marketing</span><span class="sk-pct">88%</span></div>
-          <div class="sk-trk"><div class="sk-fill" style="width:88%"></div></div>
-        </div>
-        <div class="sk-item">
-          <div class="sk-row"><span class="sk-name">Outbound Marketing</span><span class="sk-pct">86%</span></div>
-          <div class="sk-trk"><div class="sk-fill" style="width:86%"></div></div>
-        </div>
-        <div class="sk-item">
-          <div class="sk-row"><span class="sk-name">Investor Relations Management</span><span class="sk-pct">85%</span></div>
-          <div class="sk-trk"><div class="sk-fill" style="width:85%"></div></div>
-        </div>
-        <div class="sk-item">
-          <div class="sk-row"><span class="sk-name">Grant Writing</span><span class="sk-pct">87%</span></div>
-          <div class="sk-trk"><div class="sk-fill" style="width:87%"></div></div>
-        </div>
-        <div class="sk-item">
-          <div class="sk-row"><span class="sk-name">Fundraising</span><span class="sk-pct">84%</span></div>
-          <div class="sk-trk"><div class="sk-fill" style="width:84%"></div></div>
-        </div>
-        <div class="sk-item">
-          <div class="sk-row"><span class="sk-name">Operations Management</span><span class="sk-pct">89%</span></div>
-          <div class="sk-trk"><div class="sk-fill" style="width:89%"></div></div>
-        </div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">Business Development</span><span class="sk-pct">92%</span></div><div class="sk-trk"><div class="sk-fill" style="width:92%"></div></div></div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">GTM Strategy</span><span class="sk-pct">90%</span></div><div class="sk-trk"><div class="sk-fill" style="width:90%"></div></div></div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">Inbound Marketing</span><span class="sk-pct">88%</span></div><div class="sk-trk"><div class="sk-fill" style="width:88%"></div></div></div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">Outbound Marketing</span><span class="sk-pct">86%</span></div><div class="sk-trk"><div class="sk-fill" style="width:86%"></div></div></div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">Influencer Marketing</span><span class="sk-pct">83%</span></div><div class="sk-trk"><div class="sk-fill" style="width:83%"></div></div></div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">Grant Writing</span><span class="sk-pct">87%</span></div><div class="sk-trk"><div class="sk-fill" style="width:87%"></div></div></div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">Fundraising</span><span class="sk-pct">84%</span></div><div class="sk-trk"><div class="sk-fill" style="width:84%"></div></div></div>
+        <div class="sk-item"><div class="sk-row"><span class="sk-name">Operations Management</span><span class="sk-pct">89%</span></div><div class="sk-trk"><div class="sk-fill" style="width:89%"></div></div></div>
       </div>
       <div class="gc cp-pad rv" style="transition-delay:0.12s">
         <p class="cp-title">Core Competencies</p>
         <ul class="cp-list">
-          <li><span class="cpdot"></span>Inbound and outbound marketing strategy, pipeline development and demand generation</li>
-          <li><span class="cpdot"></span>Go-to-market strategy design and execution across AI, mobility and life sciences</li>
-          <li><span class="cpdot"></span>Fundraising strategy: grant acquisition, investor relations and capital raising</li>
-          <li><span class="cpdot"></span>ESG framework development and cross-functional sustainability integration</li>
-          <li><span class="cpdot"></span>Founder-level operations: team building, P&amp;L ownership, strategic communications</li>
-          <li><span class="cpdot"></span>MBA-calibre analytical rigour applied to fast-moving commercial environments</li>
+          <li><span class="cpdot"></span>Inbound and outbound marketing across B2B and B2C with measurable pipeline outcomes</li>
+          <li><span class="cpdot"></span>Influencer marketing strategy: creator vetting, campaign management and ROI tracking</li>
+          <li><span class="cpdot"></span>Go-to-market strategy design and execution across AI, mobility, biotech and research</li>
+          <li><span class="cpdot"></span>Grant writing and research funding acquisition at institutional and EU level</li>
+          <li><span class="cpdot"></span>Investor relations, fundraising strategy and high-stakes stakeholder management</li>
+          <li><span class="cpdot"></span>Founder level operations: team building, process design, P&amp;L ownership and communications</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- ══ TESTIMONIALS ══ -->
-  <div class="section" id="testimonials">
-    <p class="ey">04 &nbsp; Recommendations</p>
-    <h2 class="sh">What colleagues <span class="g">say.</span></h2>
-    <div class="tg">
-
-      <div class="gc tc rv">
-        <div class="tq">"</div>
-        <p class="tt">Anisa has a rare ability to blend scientific thinking with strategic acuity. During her time at NISER she consistently demonstrated structured problem-solving and operational clarity seldom found at her level. Her commitment, initiative and ability to lead cross-functional efforts made a lasting impact on our institution.</p>
-        <div class="tp">
-          <div class="tav">K</div>
-          <div><p class="tn">Prof. Kishore Panigrahi</p><p class="to">National Institute of Science Education and Research</p></div>
-        </div>
-      </div>
-
-      <div class="gc tc rv" style="transition-delay:0.1s">
-        <div class="tq">"</div>
-        <p class="tt">Working with Anisa at Valloza Ltd was a genuinely impressive experience. She brings calm strategic intelligence to every challenge and has a remarkable talent for identifying growth levers others miss. Her depth across business development, grant writing and stakeholder management sets her apart as a truly rounded professional.</p>
-        <div class="tp">
-          <div class="tav">C</div>
-          <div><p class="tn">Carl</p><p class="to">Valloza Ltd</p></div>
-        </div>
-      </div>
-
-      <div class="gc tc rv" style="transition-delay:0.18s">
-        <div class="tq">"</div>
-        <p class="tt">It was truly a pleasure collaborating with Anisa. She is one of the most professional and reliable people I have had the privilege of working alongside. Every deliverable was completed well ahead of schedule, always with exceptional quality. Her work ethic is genuinely second to none.</p>
-        <div class="tp">
-          <div class="tav">E</div>
-          <div><p class="tn">Emily Krawoski</p><p class="to">Senior Leader</p></div>
-        </div>
-      </div>
-
-      <div class="gc tc rv" style="transition-delay:0.25s">
-        <div class="tq">"</div>
-        <p class="tt">Anisa brought exceptional clarity and momentum to our GTM efforts at Jouly KI. Beyond her strategic sharpness, what stood out most was her reliability. She delivered consistently high-quality work ahead of deadlines and kept the entire team aligned through ambiguous, fast-moving environments.</p>
-        <div class="tp">
-          <div class="tav">J</div>
-          <div><p class="tn">Leadership Team</p><p class="to">Jouly KI</p></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ FOOTER ══ -->
+  <!-- FOOTER -->
   <footer>
     <div class="fg">
       <div class="ft">
         <div>
-          <p class="fn">Anisa <span>Kumari</span></p>
-          <p class="fs">MBA · Founder · 7+ years across Business Development, Inbound and Outbound Marketing, Fundraising and Strategy. Berlin-based, globally connected.</p>
+          <p class="fn">Kumari <span>Anisa</span></p>
+          <p class="fs">MBA · Founder · 7+ years across Business Development, GTM, Inbound and Outbound Marketing, Influencer Marketing, Operations, Grant Writing and Fundraising.</p>
           <a class="fcta" href="mailto:anisa.kar9@gmail.com">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Say Hello
+            Work With Me
           </a>
         </div>
-
         <div>
           <p class="clbl">Contact</p>
           <div class="cl">
@@ -725,23 +670,13 @@
             </a>
           </div>
         </div>
-
         <div>
           <p class="clbl">Social</p>
           <div class="sl">
-
             <a class="si" href="https://www.instagram.com/anisakar__/" target="_blank" rel="noopener">
               <span class="sic">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <defs>
-                    <linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%">
-                      <stop offset="0%"   stop-color="#f09433"/>
-                      <stop offset="33%"  stop-color="#e6683c"/>
-                      <stop offset="55%"  stop-color="#dc2743"/>
-                      <stop offset="77%"  stop-color="#cc2366"/>
-                      <stop offset="100%" stop-color="#bc1888"/>
-                    </linearGradient>
-                  </defs>
+                  <defs><linearGradient id="ig1" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="33%" stop-color="#e6683c"/><stop offset="55%" stop-color="#dc2743"/><stop offset="77%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs>
                   <rect x="2" y="2" width="20" height="20" rx="6" stroke="url(#ig1)" stroke-width="1.8"/>
                   <circle cx="12" cy="12" r="4.5" stroke="url(#ig1)" stroke-width="1.8"/>
                   <circle cx="17.5" cy="6.5" r="1.1" fill="url(#ig1)"/>
@@ -749,156 +684,98 @@
               </span>
               <span class="sil">Instagram</span>
             </a>
-
             <a class="si" href="https://x.com/anisakar4" target="_blank" rel="noopener">
-              <span class="sic">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="rgba(238,243,255,0.9)">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/>
-                </svg>
-              </span>
+              <span class="sic"><svg width="22" height="22" viewBox="0 0 24 24" fill="rgba(238,243,255,0.9)"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg></span>
               <span class="sil">X</span>
             </a>
-
             <a class="si" href="https://www.linkedin.com/in/kumari-a-43b6311b7" target="_blank" rel="noopener">
-              <span class="sic">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </span>
+              <span class="sic"><svg width="22" height="22" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
               <span class="sil">LinkedIn</span>
             </a>
-
           </div>
         </div>
       </div>
       <div class="fb">
-        <span>© 2025 Anisa Kumari. All rights reserved.</span>
+        <span>© 2025 Kumari Anisa. All rights reserved.</span>
         <span>Berlin, Germany</span>
       </div>
     </div>
   </footer>
 
 <script>
-/* ═══════════════════════════════════════════
-   CONNECTIVITY PARTICLE NETWORK
-═══════════════════════════════════════════ */
-(function() {
+/* PARTICLE NETWORK */
+(function(){
   const canvas = document.getElementById('bgCanvas');
   const ctx = canvas.getContext('2d');
-  let W, H, particles;
-  const PARTICLE_COUNT = 72;
-  const MAX_DIST = 160;
-  const COLORS = [
-    [0, 255, 200],   // teal
-    [147, 51, 234],  // purple
-    [79, 172, 254],  // blue
-    [176, 110, 243], // light purple
-  ];
-
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-  }
-
-  function Particle() {
-    this.x  = Math.random() * W;
-    this.y  = Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 0.4;
-    this.vy = (Math.random() - 0.5) * 0.4;
-    this.r  = Math.random() * 1.6 + 0.6;
-    const c = COLORS[Math.floor(Math.random() * COLORS.length)];
-    this.color = c;
-  }
-  Particle.prototype.move = function() {
-    this.x += this.vx;
-    this.y += this.vy;
-    if (this.x < 0 || this.x > W) this.vx *= -1;
-    if (this.y < 0 || this.y > H) this.vy *= -1;
-  };
-
-  function init() {
-    resize();
-    particles = Array.from({ length: PARTICLE_COUNT }, () => new Particle());
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-      p.move();
-
-      // Draw dot
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${p.color[0]},${p.color[1]},${p.color[2]},0.7)`;
-      ctx.fill();
-
-      // Draw connections
-      for (let j = i + 1; j < particles.length; j++) {
-        const q = particles[j];
-        const dx = p.x - q.x, dy = p.y - q.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < MAX_DIST) {
-          const alpha = (1 - dist / MAX_DIST) * 0.28;
-          // blend color between the two particles
-          const r = Math.round((p.color[0] + q.color[0]) / 2);
-          const g = Math.round((p.color[1] + q.color[1]) / 2);
-          const b = Math.round((p.color[2] + q.color[2]) / 2);
-          const grad = ctx.createLinearGradient(p.x, p.y, q.x, q.y);
-          grad.addColorStop(0, `rgba(${p.color[0]},${p.color[1]},${p.color[2]},${alpha})`);
-          grad.addColorStop(1, `rgba(${q.color[0]},${q.color[1]},${q.color[2]},${alpha})`);
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = grad;
-          ctx.lineWidth = 0.7;
-          ctx.stroke();
+  let W, H, pts;
+  const N = 72, DIST = 160;
+  const COLS = [[0,255,200],[147,51,234],[79,172,254],[176,110,243]];
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  function Pt(){ this.x=Math.random()*W; this.y=Math.random()*H; this.vx=(Math.random()-.5)*.4; this.vy=(Math.random()-.5)*.4; this.r=Math.random()*1.6+.6; this.c=COLS[Math.floor(Math.random()*COLS.length)]; }
+  Pt.prototype.move=function(){ this.x+=this.vx; this.y+=this.vy; if(this.x<0||this.x>W)this.vx*=-1; if(this.y<0||this.y>H)this.vy*=-1; };
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<pts.length;i++){
+      const p=pts[i]; p.move();
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(${p.c[0]},${p.c[1]},${p.c[2]},0.7)`; ctx.fill();
+      for(let j=i+1;j<pts.length;j++){
+        const q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<DIST){
+          const a=(1-d/DIST)*0.28;
+          const g=ctx.createLinearGradient(p.x,p.y,q.x,q.y);
+          g.addColorStop(0,`rgba(${p.c[0]},${p.c[1]},${p.c[2]},${a})`);
+          g.addColorStop(1,`rgba(${q.c[0]},${q.c[1]},${q.c[2]},${a})`);
+          ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(q.x,q.y);
+          ctx.strokeStyle=g; ctx.lineWidth=.7; ctx.stroke();
         }
       }
     }
     requestAnimationFrame(draw);
   }
-
-  window.addEventListener('resize', () => { resize(); });
-  init();
-  draw();
+  window.addEventListener('resize',resize);
+  resize(); pts=Array.from({length:N},()=>new Pt()); draw();
 })();
 
-/* ═══════════════════════════════════════════
-   NAV SCROLL
-═══════════════════════════════════════════ */
-const nav = document.getElementById('mainNav');
-addEventListener('scroll', () => { nav.classList.toggle('scrolled', scrollY > 50); }, { passive: true });
+/* NAV */
+const nav=document.getElementById('mainNav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50),{passive:true});
 
-/* ═══════════════════════════════════════════
-   PHOTO SWAP
-═══════════════════════════════════════════ */
-function swapPhoto(e) {
-  const f = e.target.files[0]; if (!f) return;
-  const r = new FileReader();
-  r.onload = ev => {
-    const img = document.getElementById('piImg');
-    img.src = ev.target.result; img.style.display = 'block';
-    document.getElementById('piPh').style.display = 'none';
-  };
-  r.readAsDataURL(f);
-}
+/* PHOTO */
+function swapPhoto(e){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=ev=>{const img=document.getElementById('piImg');img.src=ev.target.result;img.style.display='block';document.getElementById('piPh').style.display='none';};r.readAsDataURL(f);}
 
-/* ═══════════════════════════════════════════
-   SCROLL REVEAL + SKILL BARS
-═══════════════════════════════════════════ */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.classList.add('in');
-    e.target.querySelectorAll('.sk-fill').forEach((bar, i) => {
-      setTimeout(() => bar.classList.add('go'), i * 90 + 100);
+/* MARQUEE */
+(function(){
+  const companies = [
+    'Belleza Biotech',
+    'National Institute of Science Education and Research',
+    'Time Institute',
+    'DB S-Bahn Berlin',
+    'Bayer AG',
+    'Jouly KI',
+  ];
+  const track = document.getElementById('marqueeTrack');
+  // Render twice for seamless loop
+  [1,2].forEach(()=>{
+    companies.forEach(name=>{
+      const item = document.createElement('div');
+      item.className = 'marquee-item';
+      item.innerHTML = `<span class="marquee-dot"></span><span class="marquee-name">${name}</span>`;
+      track.appendChild(item);
     });
+  });
+})();
+
+/* SCROLL REVEAL + SKILL BARS */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    e.target.classList.add('in');
+    e.target.querySelectorAll('.sk-fill').forEach((b,i)=>{setTimeout(()=>b.classList.add('go'),i*90+100);});
     io.unobserve(e.target);
   });
-}, { threshold: 0.07 });
-document.querySelectorAll('.rv').forEach(el => io.observe(el));
+},{threshold:0.07});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
