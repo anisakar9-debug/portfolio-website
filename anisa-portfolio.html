@@ -327,32 +327,43 @@
     .book-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,255,200,0.32); opacity: 0.92; }
     .book-note { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; }
 
-    /* ANNOUNCEMENT BAR */
-    .announce-bar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
-      height: 44px;
-      display: flex; align-items: center; justify-content: center; gap: 16px;
-      background: linear-gradient(90deg, #0a1a14 0%, #0d1520 50%, #100a1a 100%);
-      border-bottom: 1px solid rgba(0,255,200,0.35);
+    /* ANNOUNCEMENT BANNER (inline) */
+    .announce-banner {
+      position: relative; z-index: 2;
+      margin: 0 60px 72px;
+      padding: 28px 40px;
+      display: flex; align-items: center; justify-content: space-between; gap: 32px;
+      background:
+        linear-gradient(135deg, rgba(0,255,200,0.07) 0%, rgba(79,172,254,0.05) 50%, rgba(176,110,243,0.07) 100%);
+      backdrop-filter: blur(40px) saturate(160%); -webkit-backdrop-filter: blur(40px) saturate(160%);
+      border: 1px solid rgba(0,255,200,0.22);
+      border-radius: 20px;
       overflow: hidden;
-      padding: 0 20px;
+      flex-wrap: wrap;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 8px 40px rgba(0,0,0,0.3);
     }
-    .announce-bar::after {
+    .announce-banner::before {
       content: '';
-      position: absolute; top: 0; left: -200%; width: 80%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0,255,200,0.07), transparent);
-      animation: bar-sweep 3.5s ease-in-out infinite;
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(0,255,200,0.03) 0%, transparent 40%, rgba(79,172,254,0.03) 100%);
       pointer-events: none;
     }
-    @keyframes bar-sweep { 0%{left:-80%} 100%{left:200%} }
+    .announce-banner::after {
+      content: '';
+      position: absolute; top: 0; left: -200%; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+      animation: bar-sweep 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes bar-sweep { 0%{left:-60%} 100%{left:200%} }
 
     .live-badge {
       display: inline-flex; align-items: center; gap: 6px;
-      padding: 4px 11px; border-radius: 100px;
-      background: rgba(0,255,200,0.18);
-      border: 1px solid rgba(0,255,200,0.5);
+      padding: 5px 13px; border-radius: 100px;
+      background: rgba(0,255,200,0.14);
+      border: 1px solid rgba(0,255,200,0.45);
       font-size: 9px; font-weight: 800;
-      letter-spacing: 0.22em; text-transform: uppercase;
+      letter-spacing: 0.24em; text-transform: uppercase;
       color: var(--teal); flex-shrink: 0;
     }
     .live-dot {
@@ -360,32 +371,36 @@
       background: var(--teal); box-shadow: 0 0 8px var(--teal);
       animation: bpulse 1.6s ease-in-out infinite;
     }
-    .announce-text {
+    .announce-body { display: flex; align-items: flex-start; gap: 18px; flex: 1; min-width: 260px; }
+    .announce-copy { display: flex; flex-direction: column; gap: 5px; }
+    .announce-headline {
       font-family: var(--display);
-      font-size: 13.5px; font-weight: 700;
-      color: rgba(238,243,255,0.92);
-      letter-spacing: 0.01em;
+      font-size: 17px; font-weight: 800;
+      color: var(--white); letter-spacing: 0.005em; line-height: 1.3;
     }
-    .announce-text .hl {
+    .announce-headline .hl {
       background: linear-gradient(90deg, var(--teal), var(--blue));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    .announce-cta {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11.5px; font-weight: 700;
-      color: #040210; text-decoration: none;
-      padding: 5px 14px; border-radius: 100px;
-      background: linear-gradient(135deg, var(--teal), var(--blue));
-      letter-spacing: 0.04em; flex-shrink: 0;
-      transition: opacity 0.2s, transform 0.2s;
-      white-space: nowrap;
+    .announce-sub {
+      font-size: 13px; font-weight: 400;
+      color: rgba(238,243,255,0.52); line-height: 1.5;
     }
-    .announce-cta:hover { opacity: 0.88; transform: scale(1.04); }
-
-    /* Push nav + hero below announce bar */
-    nav { top: 44px !important; }
-    .hero { padding-top: 164px !important; }
+    .announce-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12.5px; font-weight: 700;
+      color: #040210; text-decoration: none;
+      padding: 12px 26px; border-radius: 100px;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      letter-spacing: 0.05em; flex-shrink: 0;
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+      box-shadow: 0 4px 24px rgba(0,255,200,0.3);
+    }
+    .announce-cta:hover { opacity: 0.9; transform: translateY(-1px) scale(1.03); box-shadow: 0 8px 32px rgba(0,255,200,0.4); }
+    @media (max-width: 1040px) { .announce-banner { margin: 0 28px 60px; } }
+    @media (max-width: 680px)  { .announce-banner { padding: 22px 24px; gap: 20px; } .announce-headline { font-size: 15px; } }
 
     /* Scroll reveal */
     .rv { opacity:0; transform:translateY(30px); transition:opacity 0.78s ease,transform 0.78s ease; }
@@ -415,13 +430,6 @@
   <div class="orbs" aria-hidden="true">
     <div class="orb o1"></div><div class="orb o2"></div>
     <div class="orb o3"></div><div class="orb o4"></div><div class="orb o5"></div>
-  </div>
-
-  <!-- ANNOUNCEMENT BAR -->
-  <div class="announce-bar">
-    <span class="live-badge"><span class="live-dot"></span> Live</span>
-    <p class="announce-text">I am here to provide consultancy and help <span class="hl">small startups</span> and any individuals who need me.</p>
-    <a class="announce-cta" href="#services">Let's get started ↗</a>
   </div>
 
   <!-- NAV -->
@@ -480,6 +488,18 @@
       </div>
     </div>
     <input type="file" id="piInput" accept="image/*" style="display:none" onchange="swapPhoto(event)" />
+  </div>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div class="announce-banner">
+    <div class="announce-body">
+      <span class="live-badge"><span class="live-dot"></span> Now Available</span>
+      <div class="announce-copy">
+        <p class="announce-headline">Open for <span class="hl">consultancy engagements</span> across startups, founders and individuals.</p>
+        <p class="announce-sub">Whether you need a strategic sounding board, a growth plan, or hands-on execution support, let's make it happen.</p>
+      </div>
+    </div>
+    <a class="announce-cta" href="#services">Book a Discovery Call ↗</a>
   </div>
 
   <!-- TRUSTED BY MARQUEE -->
@@ -807,10 +827,11 @@ function swapPhoto(e){const f=e.target.files[0];if(!f)return;const r=new FileRea
   const companies = [
     'Belleza Biotech',
     'National Institute of Science Education and Research',
-    'Time Institute',
+    'TIME Institute',
     'DB S-Bahn Berlin',
     'Bayer AG',
     'Jouly KI',
+    'Urban Ground GmbH',
   ];
   const track = document.getElementById('marqueeTrack');
   // Render twice for seamless loop
