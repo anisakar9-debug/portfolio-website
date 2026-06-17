@@ -327,6 +327,67 @@
     .book-btn:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,255,200,0.32); opacity: 0.92; }
     .book-note { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; }
 
+    /* ANNOUNCEMENT BAR */
+    .announce-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 400;
+      height: 40px;
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      background: linear-gradient(90deg, rgba(0,255,200,0.12) 0%, rgba(79,172,254,0.1) 50%, rgba(176,110,243,0.12) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,255,200,0.2);
+      overflow: hidden;
+    }
+    .announce-bar::before {
+      content: '';
+      position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      animation: bar-sweep 4s ease-in-out infinite;
+    }
+    @keyframes bar-sweep { 0%{left:-60%} 100%{left:160%} }
+
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 3px 10px; border-radius: 100px;
+      background: rgba(0,255,200,0.15);
+      border: 1px solid rgba(0,255,200,0.4);
+      font-size: 9px; font-weight: 800;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--teal); flex-shrink: 0;
+    }
+    .live-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--teal); box-shadow: 0 0 6px var(--teal);
+      animation: bpulse 1.6s ease-in-out infinite;
+    }
+    .announce-text {
+      font-family: var(--display);
+      font-size: 13px; font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .announce-text .hl {
+      background: linear-gradient(90deg, var(--teal), var(--blue));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .announce-cta {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 700;
+      color: var(--teal); text-decoration: none;
+      padding: 3px 12px; border-radius: 100px;
+      border: 1px solid var(--teal-brd);
+      background: rgba(0,255,200,0.07);
+      letter-spacing: 0.06em; flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .announce-cta:hover { background: rgba(0,255,200,0.15); }
+
+    /* Push nav below announce bar */
+    nav { top: 40px !important; }
+    .hero { padding-top: 160px !important; }
+
     /* Scroll reveal */
     .rv { opacity:0; transform:translateY(30px); transition:opacity 0.78s ease,transform 0.78s ease; }
     .rv.in { opacity:1; transform:none; }
@@ -355,6 +416,13 @@
   <div class="orbs" aria-hidden="true">
     <div class="orb o1"></div><div class="orb o2"></div>
     <div class="orb o3"></div><div class="orb o4"></div><div class="orb o5"></div>
+  </div>
+
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce-bar">
+    <span class="live-badge"><span class="live-dot"></span> Live</span>
+    <p class="announce-text">I am here to provide consultancy and help <span class="hl">small startups</span> and any individuals who need me.</p>
+    <a class="announce-cta" href="#services">Let's get started ↗</a>
   </div>
 
   <!-- NAV -->
