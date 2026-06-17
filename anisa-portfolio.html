@@ -776,11 +776,11 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
   el.id = 'cursorDot';
   Object.assign(el.style, {
     position:      'fixed',
-    width:         '28px',
-    height:        '28px',
+    width:         '10px',
+    height:        '10px',
     borderRadius:  '50%',
     background:    'linear-gradient(135deg,#00ffc8,#4facfe,#b06ef3)',
-    boxShadow:     '0 0 14px rgba(0,255,200,0.55), 0 0 28px rgba(79,172,254,0.35)',
+    boxShadow:     '0 0 6px rgba(0,255,200,0.7), 0 0 12px rgba(79,172,254,0.4)',
     pointerEvents: 'none',
     zIndex:        '9999',
     transform:     'translate(-50%,-50%) scale(1)',
@@ -790,19 +790,6 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
   });
   document.body.appendChild(el);
 
-  /* Inner dot for precision */
-  const dot = document.createElement('div');
-  Object.assign(dot.style, {
-    position:     'absolute',
-    inset:        '0',
-    margin:       'auto',
-    width:        '6px',
-    height:       '6px',
-    borderRadius: '50%',
-    background:   '#fff',
-    opacity:      '0.85',
-  });
-  el.appendChild(dot);
 
   let mx = 0, my = 0, cx = 0, cy = 0, raf;
 
@@ -825,7 +812,7 @@ document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
   /* Scale up on clickable elements */
   document.querySelectorAll('a,button,.svc-card,.photo-card').forEach(el2 => {
-    el2.addEventListener('mouseenter', () => { el.style.transform = 'translate(-50%,-50%) scale(1.7)'; el.style.opacity = '0.7'; });
+    el2.addEventListener('mouseenter', () => { el.style.transform = 'translate(-50%,-50%) scale(1.8)'; el.style.opacity = '0.8'; });
     el2.addEventListener('mouseleave', () => { el.style.transform = 'translate(-50%,-50%) scale(1)';   el.style.opacity = '1'; });
   });
 })();
